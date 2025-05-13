@@ -1,0 +1,114 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMnayIwbp0uTRV4f81MB0+h",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/DARTOONYDP/Ruta-Mas-Corta/blob/main/Ruta%20mas%20Corta\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "WffPhxSC1zMm"
+      },
+      "outputs": [],
+      "source": [
+        "import networkx as nx"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "G = nx.DiGraph()\n",
+        "G.add_edge(\"O\", \"A\", weight=2.0)\n",
+        "G.add_edge(\"O\", \"B\", weight=5.0)\n",
+        "G.add_edge(\"O\", \"C\", weight=4.0)\n",
+        "G.add_edge(\"A\", \"B\", weight=2.0)\n",
+        "G.add_edge(\"A\", \"D\", weight=7.0)\n",
+        "G.add_edge(\"A\", \"C\", weight=7.0)\n",
+        "G.add_edge(\"B\", \"E\", weight=4.0)\n",
+        "G.add_edge(\"C\", \"E\", weight=3.0)\n",
+        "G.add_edge(\"D\", \"T\", weight=5.0)\n",
+        "G.add_edge(\"E\", \"T\", weight=7.0)"
+      ],
+      "metadata": {
+        "id": "bv8AIhzU2JwG"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nx.dijkstra_path(G, source=\"O\", target=\"T\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "bYdTrXXy2PIb",
+        "outputId": "b7e4d0c3-e2b5-4bab-dac9-b6d8c0a53167"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "['O', 'C', 'E', 'T']"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 4
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nx.dijkstra_path_length(G, source=\"O\", target=\"T\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "G5d-vM042Shx",
+        "outputId": "8167aa71-3792-491a-985f-6feee0ce3577"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "14.0"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 5
+        }
+      ]
+    }
+  ]
+}
